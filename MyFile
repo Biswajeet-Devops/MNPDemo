@@ -1,0 +1,13 @@
+node{
+    def antpath
+    stage('code'){
+        git 'https://github.com/Biswajeet-Devops/MNPDemo.git'
+    }
+    stage('build'){
+        
+       antpath=tool name: 'ant', type: 'ant'
+       echo "${antpath}"
+       bat (/"${antpath}\bin\ant" /)
+       
+    }
+}
